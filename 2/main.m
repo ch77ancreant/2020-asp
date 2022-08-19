@@ -1,4 +1,3 @@
-clear;clc;close all
 
 load('data_v.mat');
 
