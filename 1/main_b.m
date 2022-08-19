@@ -30,6 +30,6 @@ plot(Re_w0(min_x), Jmin, '*', 'color', 'r', 'markersize',10);
 plot(Re_w0, J, 'color', 'blue');
 xlabel('Re\{w0\}');
 ylabel('MSE');
-legend('Optimal Point','MSE curve')
+legend('Optimal Point','MSE curve');
 
 
