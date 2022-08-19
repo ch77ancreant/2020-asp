@@ -9,7 +9,7 @@ end
 [R_dim1, ~] = size(R);
 [w_dim1, ~] = size(w);
 [p_dim1, ~] = size(p);
-if R_dim1~=w_dim1 || w_dim1~=p_dim1 || ~w_tf || ~p_tf || ~sd2_tf
+if R_dim1 ~= w_dim1 || w_dim1 ~= p_dim1
     error('Error. The dimensions of input arguments are not suitable')
 end
 
