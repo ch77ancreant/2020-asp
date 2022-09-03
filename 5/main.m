@@ -1,4 +1,4 @@
-clear;clc;close all
+
 
 load('data.mat');
 
@@ -49,22 +49,14 @@ for k = 1:4
             ylabel('magnitude');
         elseif k == 4
             plot(1:L, unwrap(angle(x_hat_n_given_yn(m,:))));
-            ylabel('unwrapped phase','interpreter','latex');
+            ylabel('phase');
         end
         title(['$\hat{x}_', num2str(m),'(n|\mathcal{Y}_n)$'],'interpreter','latex');
-        xlabel('n');
+        xlabel('n','interpreter','latex');
         axis([0,L,-inf,inf]);
     end
 end
 
-%% Problem(c)
-slope = zeros(M, 1);
-for mm = 1:M
-    A = [ones(L,1), (1:L).'];
-    p = unwrap(angle(x_hat_n_given_yn(mm,:).'));
-    a = (A.'*A)\A.'*p;
-    slope(mm) = a(2);
-end
 
 
  
