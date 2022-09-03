@@ -29,6 +29,7 @@ plot(theta, 20*log10(abs(B_LCMV)), 'linewidth', 2);
 hold on
 line([3.25 3.25],[-80 20],'LineStyle',':','LineWidth',1.3,'Color',[0.8500 0.3250 0.0980])
 line([18.57 18.57],[-80 20],'LineStyle',':','LineWidth',1.3,'Color',[0.4940 0.1840 0.5560])
+legend('beampattern','signal direction','interference direction','Location','southwest')
 title('LCMV beampattern');
 xlabel('$\theta$ (rad)','interpreter','latex');
 ylabel('$|B_{\theta}(\theta)|$ (dB)','interpreter','latex');
