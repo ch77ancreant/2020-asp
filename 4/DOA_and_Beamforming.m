@@ -7,6 +7,7 @@ R_hat = (matX*matX')/1000;
 % Discrete grid theta -----------
 theta = -90:0.01:90;
 
+
 %% DOA estimation
 
 % Scan all the theta and compute the spetrum
@@ -83,6 +84,7 @@ set(gca,'ytick',[-80 -60 -40 -20 0 20]);
 set(gca,'xtick',[-90 -45 0 45 90]);
 set(gca,'xticklabel',{'-\pi/2','-\pi/4','0','\pi/4','\pi/2'});
 grid on
+
 
 %% Beamformer output
 
