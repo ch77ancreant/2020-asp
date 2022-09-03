@@ -33,7 +33,7 @@ F_n_n1 = inv(F_n1_n);
      x_hat_n_given_yn(:, ii) = F_n_n1*x_hat_n_given_ynm1;
  end
  
- % plot
+% plot
 for k = 1:4
     figure(k);
     for m = 1:M
