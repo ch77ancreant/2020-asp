@@ -1,4 +1,4 @@
-
+clear; close all;
 
 load('data.mat');
 
@@ -15,7 +15,7 @@ x_hat_n_given_yn = zeros(M, L);
 % F(n,n+1) = inv(F(n+1,n))
 F_n_n1 = inv(F_n1_n);
 
- for ii = 1:L
+ for i = 1:L
      
      % Kalman Gain
      R = C_n*K_n_nm1*C_n' + Q2_n;
@@ -26,11 +26,11 @@ F_n_n1 = inv(F_n1_n);
      K_n_nm1 = F_n1_n*K_n*F_n1_n' + Q1_n;
      
      % One-Step Predictor
-     a = Y_tilde(:, ii) - C_n*x_hat_n_given_ynm1;
+     a = Y_tilde(:, i) - C_n*x_hat_n_given_ynm1;
      x_hat_n_given_ynm1 = F_n1_n*x_hat_n_given_ynm1 + G*a;
      
      % Estimate the state vector at time n
-     x_hat_n_given_yn(:, ii) = F_n_n1*x_hat_n_given_ynm1;
+     x_hat_n_given_yn(:, i) = F_n_n1*x_hat_n_given_ynm1;
  end
  
 % plot
@@ -57,10 +57,3 @@ for k = 1:4
     end
 end
 
-
-
- 
- 
- 
- 
- 
