@@ -1,4 +1,4 @@
-clear;clc;close all;
+clear; close all;
 
 load('matV.mat');
 d = matV;
@@ -11,9 +11,9 @@ b = [1, 1/10];
 a = [1, -1/6, -1/6];
 
 % input signal 'x' and desired signal 'd'
-x = zeros(1000, 500);
-for k = 1:1000
-    x(k,:) = filter(b, a, matV(k,:));
+x = zeros(size(d,1), size(d,2));
+for k = 1:size(d,1)
+    x(k, :) = filter(b, a, d(k, :));
 end
 
 
@@ -26,7 +26,7 @@ J_n_RLS1 = ASP_RLS(x, d, 0.75, 0.01, R);
 J_n_RLS2 = ASP_RLS(x, d, 0.75, 0.1, R);
 J_n_RLS3 = ASP_RLS(x, d, 0.95, 0.01, R);
 
-%% plot -------------------------------------
+% plot -------------------------------------
 semilogy(1:500, J_n_LMS1, 'Marker','.');
 hold on
 semilogy(1:500, J_n_LMS2, 'Marker','.');
@@ -41,3 +41,5 @@ xlabel('$n$','interpreter','latex');
 ylabel('$\hat{J}(n)$','interpreter','latex');
 title('Learning curves with R = 1000');
 grid on
+
+
