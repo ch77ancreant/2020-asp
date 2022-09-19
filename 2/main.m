@@ -29,29 +29,29 @@ b1 = x_1 + kappa(1) * x;
 f(1, :) = f1;
 b(1, :) = b1;
 
-for ii = 2:10
-    f(ii, :) = f(ii-1, :) + kappa(ii)' * [0, b(ii-1,1:999)];
-    b(ii, :) = [0, b(ii-1,1:999)] + kappa(ii) * f(ii-1, :);
+for i = 2:10
+    f(i, :) = f(i-1, :) + kappa(i)' * [0, b(i-1, 1:999)];
+    b(i, :) = [0, b(i-1, 1:999)] + kappa(i) * f(i-1, :);
 end
 
 % Compute the prediction error power
 Pf = zeros(1, 10);
 Pb = zeros(1, 10);
 for m = 1:10
-    Pf(m) = sum(abs(f(m,:)).^2) / 1000;
-    Pb(m) = sum(abs(b(m,:)).^2) / 1000;
+    Pf(m) = sum(abs(f(m, :)).^2) / 1000;
+    Pb(m) = sum(abs(b(m, :)).^2) / 1000;
 end
 
-% func is PSD of x(n) --- get by hand
+% func is the PSD of x(n) --- get by hand
 % integrate log(S(exp(j2pif))) and compute the prediction error bound
-func = @(u) log10((2+2*cos(2*pi.*u)) ./ (19/18-5/18*cos(2*pi.*u)-1/3*cos(4*pi.*u)));
+func = @(u) log10((2+2*cos(2*pi.*u)) ./ (19/18 - 5/18*cos(2*pi.*u) - 1/3*cos(4*pi.*u)));
 Pmbound = exp(integral(func, -0.4999, 0.4999));
 
 %plot
-plot([1:10], Pf, '-*');
+plot(1:10, Pf, '-*');
 hold on 
-plot([1:10], Pb, '-o');
-plot([1:10], Pmbound*ones(1,10), 'r:', 'linewidth', 1.3);
+plot(1:10, Pb, '-o');
+plot(1:10, Pmbound*ones(1,10), 'r:', 'linewidth', 1.3);
 axis([1 10 0.8 1.5]);
 legend({'$\hat{P}_{f,m}$','$\hat{P}_{b,m}$','prediction error bound'},'interpreter','latex');
 xlabel('m','interpreter','latex');
