@@ -19,7 +19,7 @@ J = zeros(81, 101);
 for ii = 1:81
     for jj = 1:101
         w = [Re_w0(jj) + 1i*Im_w0(ii); 1 + 1i; 0.5];
-        J(ii, jj) = real(Wiener_MSE(R, w, p, sd2));
+        J(ii, jj) = real(Wiener_filter(R, w, p, sd2));
     end
 end
 

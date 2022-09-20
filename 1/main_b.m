@@ -16,7 +16,7 @@ Re_w0 = linspace(-5, 5, 101);
 J = zeros(1, 101);
 for ii = 1:101
     w = [Re_w0(ii)+1i; -0.5+1i; -1];
-    J(ii) = real(Wiener_MSE(R, w, p, sd2));
+    J(ii) = real(Wiener_filter(R, w, p, sd2));
 end
 
 Jmin = min(J);

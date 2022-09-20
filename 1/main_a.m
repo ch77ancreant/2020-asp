@@ -19,5 +19,5 @@ w_opt = R \ p;
 
 % ---------------------------------
 % output, MSE J
-J = Wiener_MSE(R, w_opt, p, sd2)
+J = Wiener_filter(R, w_opt, p, sd2)
 

@@ -1,4 +1,4 @@
-function J = Wiener_MSE(R, w, p, sd2)
+function J = Wiener_filter(R, w, p, sd2)
 
 R_tf = ishermitian(R);
 d = eig(R);
