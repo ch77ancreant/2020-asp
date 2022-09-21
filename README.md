@@ -2,11 +2,9 @@
 
 1. The error-performance surface
 
-2. Prediction error filters
+2. Adaptive filters (LMS, NLMS, RLS)
 
-3. Adaptive filters (LMS, NLMS, RLS)
+3. Adaptive beamforming
 
-4. Adaptive beamforming
-
-5. Kalman filters
+4. Kalman filters
 
