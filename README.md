@@ -1,4 +1,4 @@
-# 2020-asp-hw
+# 2020-asp
 
 1. The error-performance surface
 
