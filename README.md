@@ -1,4 +1,4 @@
-# 2020-asp-hw
+# 2020-asp (adaptive signal processing)
 
 1. The error-performance surface
 
